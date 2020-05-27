@@ -1,4 +1,4 @@
-# cpmidias
+# Vue Kanban
 
 ## Project setup
 ```
