@@ -93,8 +93,9 @@ export default {
       modalContent: '',
       modalPriority: 'low',
       rules: [
-        (v = 0) => v.length <= 240 || 'Você excedeu 250 caracteres',
-        (v = 0) => v.length > 0 || 'Insira algum conteúdo'
+        (v = 0) => v.length > 0 || 'Insira algum conteúdo',
+        (v = 0) =>
+          (v.length <= 240 && v.length > 0) || 'Você excedeu 250 caracteres'
       ],
       dialog: false
     }
@@ -131,6 +132,7 @@ export default {
     },
     openDialog() {
       this.dialog = true
+      this.charCount = 0
     },
     counterValue() {
       const charCount = this.charCount
